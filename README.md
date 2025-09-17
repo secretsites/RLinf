@@ -21,6 +21,199 @@ RLinf is a flexible and scalable open-source infrastructure designed for post-tr
   <img src="docs/source-en/_static/svg/overview.svg" alt="RLinf-overview"/>
 </div>
 
+## Main Results
+### Embodied Intelligence
+
+<div align="center">
+  <table>
+    <tr>
+      <td valign="top">
+        <table>
+          <tr>
+            <th colspan="5" style="text-align:center;"><strong>OpenVLA-OFT model results on ManiSkill3</strong></th>
+          </tr>
+          <tr>
+            <th>Model</th>
+            <th>Vision</th>
+            <th>Semantic</th>
+            <th>Position</th>
+            <th>Average</th>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/gen-robot/openvla-7b-rlvla-warmup">rl4vla</a></td>
+            <td>76.6%</td>
+            <td>75.4%</td>
+            <td>77.6%</td>
+            <td>76.1%</td>
+          </tr>
+          <tr>
+            <td>GRPO-OpenVLA-OFT</td>
+            <td><strong>84.6%</strong></td>
+            <td>51.6%</td>
+            <td>42.9%</td>
+            <td>61.5%</td>
+          </tr>
+          <tr>
+            <td>PPO-OpenVLA-OFT</td>
+            <td>80.5%</td>
+            <td>56.6%</td>
+            <td>56.1%</td>
+            <td>64.5%</td>
+          </tr>
+          <tr>
+            <td>PPO-OpenVLA</td>
+            <td>82.0%</td>
+            <td><strong>80.6%</strong></td>
+            <td><strong>89.3%</strong></td>
+            <td><strong>82.2%</strong></td>
+          </tr>
+          <tr>
+            <td>GRPO-OpenVLA</td>
+            <td>74.7%</td>
+            <td>74.4%</td>
+            <td>81.6%</td>
+            <td>75.5%</td>
+          </tr>
+        </table>
+      </td>
+      <td valign="top">
+        <table>
+          <tr>
+            <th colspan="6" style="text-align:center;"><strong>OpenVLA-OFT model results on LIBERO</strong></th>
+          </tr>
+          <tr>
+            <th>Model</th>
+            <th><a href="https://huggingface.co/RLinf/RLinf-OpenVLAOFT-GRPO-LIBERO-spatial">Spatial</a></th>
+            <th><a href="https://huggingface.co/RLinf/RLinf-OpenVLAOFT-GRPO-LIBERO-goal">Goal</a></th>
+            <th><a href="https://huggingface.co/RLinf/RLinf-OpenVLAOFT-GRPO-LIBERO-object">Object</a></th>
+            <th><a href="https://huggingface.co/RLinf/RLinf-OpenVLAOFT-GRPO-LIBERO-long">Long</a></th>
+            <th>Average</th>
+          </tr>
+          <tr>
+            <td>OpenVLA-OFT-SFT (one-shot)</td>
+            <td>56.5%</td>
+            <td>45.6%</td>
+            <td>25.6%</td>
+            <td>9.7%</td>
+            <td>34.4%</td>
+          </tr>
+          <tr>
+            <td>OpenVLA-OFT-RLinf</td>
+            <td><strong>99.0%</strong></td>
+            <td><strong>99.0%</strong></td>
+            <td><strong>99.0%</strong></td>
+            <td><strong>94.4%</strong></td>
+            <td><strong>97.9%</strong></td>
+          </tr>
+          <tr>
+            <td>Improvement</td>
+            <td>+42.5%</td>
+            <td>+53.4%</td>
+            <td>+73.4%</td>
+            <td>+84.7%</td>
+            <td>+63.5%</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+- RLinf supports both PPO and GRPO algorithms, enabling state-of-the-art training for Vision-Language-Action models.
+- The framework provides seamless integration with mainstream embodied intelligence benchmarks, including ManiSkill3 and LIBERO, and achieves strong performance across diverse evaluation metrics.
+
+
+### Math Reasoning
+
+<div align="center">
+  <table>
+    <tr>
+      <td valign="top">
+        <table>
+          <tr>
+            <th colspan="5" style="text-align:center;"><strong>1.5B model results</strong></th>
+          </tr>
+          <tr>
+            <th>Model</th>
+            <th><a href="https://huggingface.co/datasets/RLinf/AIME24">AIME 24</a></th>
+            <th><a href="https://huggingface.co/datasets/RLinf/AIME25">AIME 25</a></th>
+            <th><a href="https://huggingface.co/datasets/RLinf/GPQA-diamond">GPQA-diamond</a></th>
+            <th>Average</th>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B">DeepSeek-R1-Distill-Qwen-1.5B (base model)</a></td>
+            <td>28.33</td><td>24.90</td><td>27.45</td><td>26.89</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/zwhe99/DeepMath-1.5B">DeepMath-1.5B</a></td>
+            <td>37.80</td><td>30.42</td><td>32.11</td><td>33.44</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/agentica-org/DeepScaleR-1.5B-Preview">DeepScaleR-1.5B-Preview</a></td>
+            <td>40.41</td><td>30.93</td><td>27.54</td><td>32.96</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/inclusionAI/AReaL-1.5B-Preview-Stage-3">AReaL-1.5B-Preview-Stage-3</a></td>
+            <td>40.73</td><td>31.56</td><td>28.10</td><td>33.46</td>
+          </tr>
+          <tr>
+            <td>AReaL-1.5B-retrain*</td>
+            <td>44.42</td><td>34.27</td><td>33.81</td><td>37.50</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/Nickyang/FastCuRL-1.5B-V3">FastCuRL-1.5B-V3</a></td>
+            <td>43.65</td><td>32.49</td><td>35.00</td><td>37.05</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/RLinf/RLinf-math-1.5B"><strong>RLinf-math-1.5B</strong></a></td>
+            <td><strong>48.44</strong></td><td><strong>35.63</strong></td><td><strong>38.46</strong></td><td><strong>40.84</strong></td>
+          </tr>
+        </table>
+      </td>
+      <td valign="top">
+        <table>
+          <tr>
+            <th colspan="5" style="text-align:center;"><strong>7B model results</strong></th>
+          </tr>
+          <tr>
+            <th>Model</th>
+            <th><a href="https://huggingface.co/datasets/RLinf/AIME24">AIME 24</a></th>
+            <th><a href="https://huggingface.co/datasets/RLinf/AIME25">AIME 25</a></th>
+            <th><a href="https://huggingface.co/datasets/RLinf/GPQA-diamond">GPQA-diamond</a></th>
+            <th>Average</th>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B">DeepSeek-R1-Distill-Qwen-7B (base model)</a></td>
+            <td>54.90</td><td>40.20</td><td>45.48</td><td>46.86</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/inclusionAI/AReaL-boba-RL-7B">AReaL-boba-RL-7B</a></td>
+            <td>61.66</td><td>49.38</td><td>46.93</td><td>52.66</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/Skywork/Skywork-OR1-7B">Skywork-OR1-7B</a></td>
+            <td>66.87</td><td>52.49</td><td>44.43</td><td>54.60</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/POLARIS-Project/Polaris-7B-Preview">Polaris-7B-Preview</a></td>
+            <td><strong>68.55</strong></td><td>51.24</td><td>43.88</td><td>54.56</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/nvidia/AceMath-RL-Nemotron-7B">AceMath-RL-Nemotron-7B</a></td>
+            <td>67.30</td><td><strong>55.00</strong></td><td>45.57</td><td>55.96</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/RLinf/RLinf-math-7B"><strong>RLinf-math-7B</strong></a></td>
+            <td>68.33</td><td>52.19</td><td><strong>48.18</strong></td><td><strong>56.23</strong></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+- RLinf achieves state-of-the-art performance on math reasoning tasks, consistently outperforming existing models across multiple benchmarks (AIME 24, AIME 25, GPQA-diamond) for both 1.5B and 7B model sizes.
+
 ## What's NEW!
 - [2025/08] RLinf is open-sourced. The formal v0.1 will be released soon. The paper [RLinf: Flexible and Efficient Large-scale Reinforcement Learning via Macro-to-Micro Flow Transformation]() will also be released accordingly. 
 
